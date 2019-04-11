@@ -1,0 +1,65 @@
+{% extends "index/layouts.html" %}
+
+{% block title %}
+  DMS Converter
+{% endblock title %}
+
+{% block style%}
+
+<style>
+form {
+    text-align: center;
+}
+
+form input {
+    border-radius: 10px;
+}
+
+form .btn {
+    margin : 10px;
+}
+
+#result {
+    text-align: center;
+    display: none;
+}
+
+</style>
+{% endblock style %}
+
+{% block script%}
+<script>
+window.onload = function (){  
+    
+var lat = document.getElementById('dlat').value;
+
+
+document.getElementById('btnconvert').addEventListener("click", function(){
+    console.log(lat);
+})
+
+
+
+}
+</script>
+{% endblock script%}
+
+
+
+{% block body %}
+<form>
+    <h3>Degree to DMS</h3>
+    <h5>Latitude</h5>
+    <i class="fa fa-paragraph" aria-hidden="true">pisahkan menggunakan spasi</i>
+</br>
+    <input type="text" name='dlat' id='dlat' required>
+    <button class="btn btn-primary" type="button" id='btnconvert'>convert</button>
+</form>
+
+<div id='result'>   
+    <h5 class='textresult'> Latitude </h5>
+    <h6 id='lat'></h6>
+    <h5 class='textresult'> Longitude </h5>
+    <h6 id='lon'></h6>
+</div>
+{% endblock body %}
